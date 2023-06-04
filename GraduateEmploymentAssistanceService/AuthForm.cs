@@ -99,5 +99,32 @@ namespace GraduateEmploymentAssistanceService.Model
         {
 
         }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            string commandString = @"INSERT INTO students (fullName, phone, password, login, isUser) " +
+               "VALUES(@fullName, @phone, @password, @post, 1)";
+            using (SqlConnection connection = new SqlConnection(@"Data Source = DESKTOP-R8IMC7R; Initial Catalog = Base; Integrated Security=True"))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(commandString, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                DataTable table = new DataTable();
+
+                command.Parameters.AddWithValue("@fullName", textBox_printFullName.Text);
+                command.Parameters.AddWithValue("@phone", textBox_printPhone.Text);
+                command.Parameters.AddWithValue("@password", textBox_printPassword.Text);
+                command.Parameters.AddWithValue("@login", textBox_printLogin.Text);
+                
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Аккаунт создан!", "Уведомление");
+                }
+            }
+        }
     }
 }

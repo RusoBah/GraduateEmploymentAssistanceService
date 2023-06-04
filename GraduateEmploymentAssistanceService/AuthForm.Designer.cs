@@ -37,14 +37,15 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_printLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_printPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_printPhone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_printFullName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -164,13 +165,14 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.ForestGreen;
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.textBox_printFullName);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.textBox_printPhone);
             this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.textBox_printPassword);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.textBox_printLogin);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tabPage2.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -181,17 +183,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "РЕГИСТРАЦИЯ";
             // 
-            // textBox1
+            // textBox_printLogin
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(486, 55);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(532, 35);
-            this.textBox1.TabIndex = 8;
+            this.textBox_printLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_printLogin.BackColor = System.Drawing.Color.MistyRose;
+            this.textBox_printLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_printLogin.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_printLogin.Location = new System.Drawing.Point(486, 55);
+            this.textBox_printLogin.Multiline = true;
+            this.textBox_printLogin.Name = "textBox_printLogin";
+            this.textBox_printLogin.Size = new System.Drawing.Size(532, 35);
+            this.textBox_printLogin.TabIndex = 8;
             // 
             // label2
             // 
@@ -204,18 +206,18 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Введите логин:";
             // 
-            // textBox2
+            // textBox_printPassword
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(486, 128);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(532, 35);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox_printPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_printPassword.BackColor = System.Drawing.Color.MistyRose;
+            this.textBox_printPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_printPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_printPassword.Location = new System.Drawing.Point(486, 128);
+            this.textBox_printPassword.Multiline = true;
+            this.textBox_printPassword.Name = "textBox_printPassword";
+            this.textBox_printPassword.Size = new System.Drawing.Size(532, 35);
+            this.textBox_printPassword.TabIndex = 10;
+            this.textBox_printPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -228,17 +230,17 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Введите пароль:";
             // 
-            // textBox3
+            // textBox_printPhone
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(486, 213);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(532, 35);
-            this.textBox3.TabIndex = 12;
+            this.textBox_printPhone.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_printPhone.BackColor = System.Drawing.Color.MistyRose;
+            this.textBox_printPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_printPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_printPhone.Location = new System.Drawing.Point(486, 213);
+            this.textBox_printPhone.Multiline = true;
+            this.textBox_printPhone.Name = "textBox_printPhone";
+            this.textBox_printPhone.Size = new System.Drawing.Size(532, 35);
+            this.textBox_printPhone.TabIndex = 12;
             // 
             // label5
             // 
@@ -251,17 +253,17 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Введите номер телефона:";
             // 
-            // textBox4
+            // textBox_printFullName
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(486, 295);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(532, 35);
-            this.textBox4.TabIndex = 14;
+            this.textBox_printFullName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox_printFullName.BackColor = System.Drawing.Color.MistyRose;
+            this.textBox_printFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_printFullName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_printFullName.Location = new System.Drawing.Point(486, 295);
+            this.textBox_printFullName.Multiline = true;
+            this.textBox_printFullName.Name = "textBox_printFullName";
+            this.textBox_printFullName.Size = new System.Drawing.Size(532, 35);
+            this.textBox_printFullName.TabIndex = 14;
             // 
             // label6
             // 
@@ -273,6 +275,23 @@
             this.label6.Size = new System.Drawing.Size(224, 36);
             this.label6.TabIndex = 13;
             this.label6.Text = "Введите ФИО:";
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.BackColor = System.Drawing.Color.ForestGreen;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(486, 399);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(226, 59);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Регистрация";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // AuthForm
             // 
@@ -308,13 +327,14 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_printFullName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_printPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_printPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_printLogin;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }
