@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -41,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnLaborMarket = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -61,6 +62,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1361, 91);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.DarkGreen;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(1072, 23);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(152, 28);
+            this.textBox1.TabIndex = 2;
             // 
             // btnClose
             // 
@@ -101,6 +111,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnLaborMarket);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.btnMainForm);
             // 
@@ -222,14 +233,22 @@
     "дпринимательства»";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
+            // btnLaborMarket
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGreen;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(1072, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 28);
-            this.textBox1.TabIndex = 2;
+            this.btnLaborMarket.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLaborMarket.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnLaborMarket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLaborMarket.FlatAppearance.BorderSize = 0;
+            this.btnLaborMarket.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnLaborMarket.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnLaborMarket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaborMarket.Location = new System.Drawing.Point(33, 126);
+            this.btnLaborMarket.Name = "btnLaborMarket";
+            this.btnLaborMarket.Size = new System.Drawing.Size(226, 59);
+            this.btnLaborMarket.TabIndex = 2;
+            this.btnLaborMarket.Text = "Рынок труда";
+            this.btnLaborMarket.UseVisualStyleBackColor = false;
+            this.btnLaborMarket.Click += new System.EventHandler(this.btnLaborMarket_Click);
             // 
             // MainForm
             // 
@@ -272,6 +291,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnLaborMarket;
     }
 }
 

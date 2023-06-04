@@ -47,7 +47,9 @@ namespace GraduateEmploymentAssistanceService
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            
+            childForm.BackColor = Color.ForestGreen;
+            childForm.Size = activeForms.Size;
+
             this.splitContainer1.Panel2.Controls.Add(childForm);
             childForm.BringToFront();
             childForm.Show();
@@ -80,6 +82,12 @@ namespace GraduateEmploymentAssistanceService
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnLaborMarket_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new LaborMarket(), sender);
+            Header.Text = btnLaborMarket.Text;
         }
     }
 }

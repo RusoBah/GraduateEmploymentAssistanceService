@@ -16,5 +16,30 @@ namespace GraduateEmploymentAssistanceService
         {
             InitializeComponent();
         }
+
+        private void bankOfVacanciesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bankOfVacanciesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.baseDataSet);
+
+        }
+
+        private void LaborMarket_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "baseDataSet.BankOfVacancies". При необходимости она может быть перемещена или удалена.
+            this.bankOfVacanciesTableAdapter.Fill(this.baseDataSet.BankOfVacancies);
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bankOfVacanciesBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }
