@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище BaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="bigint" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="isUser" Type="bit" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Base.dbo.BankOfVacancies" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="BankOfVacancies">
+          <Key>
+            <PropertyRef Name="Text" />
+          </Key>
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="50" />
+          <Property Name="Enterprises" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CooperatingEnterprises">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EmploymentOfGraduates">
+          <Key>
+            <PropertyRef Name="Graduates" />
+          </Key>
+          <Property Name="Graduates" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Enterprises" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Enterprises">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Base.dbo.Events" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Events">
+          <Property Name="Event" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfTheEvent" Type="date" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Base.dbo.students" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="students">
+          <Property Name="id" Type="int" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="255" />
+          <Property Name="birthDate" Type="date" />
+          <Property Name="phone" Type="float" />
+          <Property Name="password" Type="nvarchar" MaxLength="255" />
+          <Property Name="group" Type="float" />
+          <Property Name="curs" Type="int" />
+          <Property Name="isUser" Type="bit" />
+          <Property Name="login" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+        <EntityContainer Name="Хранилище BaseModelContainer">
+          <EntitySet Name="admins" EntityType="Self.admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CooperatingEnterprises" EntityType="Self.CooperatingEnterprises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmploymentOfGraduates" EntityType="Self.EmploymentOfGraduates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enterprises" EntityType="Self.Enterprises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BankOfVacancies" EntityType="Self.BankOfVacancies" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BankOfVacancies].[Text] AS [Text], 
+    [BankOfVacancies].[Post] AS [Post], 
+    [BankOfVacancies].[Enterprises] AS [Enterprises]
+    FROM [dbo].[BankOfVacancies] AS [BankOfVacancies]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="fullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="Int64" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isUser" Type="Boolean" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CooperatingEnterprises">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EmploymentOfGraduates">
+          <Key>
+            <PropertyRef Name="Graduates" />
+          </Key>
+          <Property Name="Graduates" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Enterprises" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Enterprises">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BankOfVacancies">
+          <Key>
+            <PropertyRef Name="Text" />
+          </Key>
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Enterprises" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="BaseConn" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="Self.admins" />
+          <EntitySet Name="CooperatingEnterprises" EntityType="Self.CooperatingEnterprises" />
+          <EntitySet Name="EmploymentOfGraduates" EntityType="Self.EmploymentOfGraduates" />
+          <EntitySet Name="Enterprises" EntityType="Self.Enterprises" />
+          <EntitySet Name="BankOfVacancies" EntityType="Self.BankOfVacancies" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище BaseModelContainer" CdmEntityContainer="BaseConn">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="BaseModel.admins">
+              <MappingFragment StoreEntitySet="admins">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="isUser" ColumnName="isUser" />
+                <ScalarProperty Name="login" ColumnName="login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CooperatingEnterprises">
+            <EntityTypeMapping TypeName="BaseModel.CooperatingEnterprises">
+              <MappingFragment StoreEntitySet="CooperatingEnterprises">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmploymentOfGraduates">
+            <EntityTypeMapping TypeName="BaseModel.EmploymentOfGraduates">
+              <MappingFragment StoreEntitySet="EmploymentOfGraduates">
+                <ScalarProperty Name="Graduates" ColumnName="Graduates" />
+                <ScalarProperty Name="Enterprises" ColumnName="Enterprises" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enterprises">
+            <EntityTypeMapping TypeName="BaseModel.Enterprises">
+              <MappingFragment StoreEntitySet="Enterprises">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankOfVacancies">
+            <EntityTypeMapping TypeName="BaseModel.BankOfVacancies">
+              <MappingFragment StoreEntitySet="BankOfVacancies">
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="Enterprises" ColumnName="Enterprises" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

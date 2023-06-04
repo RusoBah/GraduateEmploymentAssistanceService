@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GraduateEmploymentAssistanceService
 {
-    public partial class MainForm : Form
+    public partial class LaborMarket : Form
     {
-        public MainForm()
+        public LaborMarket()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
