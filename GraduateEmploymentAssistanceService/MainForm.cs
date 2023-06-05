@@ -59,14 +59,15 @@ namespace GraduateEmploymentAssistanceService
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+           Close();
+            
         }
 
         private void btnMainForm_Click(object sender, EventArgs e)
         {
             MainForm mainForm = new MainForm(_user);
             mainForm.Show();
-            this.Close();
+            this.Hide();
             //mainForm.panel1.Hide();
             //mainForm.splitContainer1.Panel1.Hide();
             //OpenChildForm(mainForm, sender);
@@ -88,6 +89,17 @@ namespace GraduateEmploymentAssistanceService
         {
             OpenChildForm(new LaborMarket(), sender);
             Header.Text = btnLaborMarket.Text;
+        }
+
+        private void btnEvent_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnEvent_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Events(), sender);
+            Header.Text = btnEvent.Text;
         }
     }
 }

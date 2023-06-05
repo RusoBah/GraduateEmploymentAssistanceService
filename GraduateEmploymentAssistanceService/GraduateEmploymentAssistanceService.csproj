@@ -62,6 +62,12 @@
       <DependentUpon>BaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="CheckUser.cs" />
+    <Compile Include="Events.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Events.Designer.cs">
+      <DependentUpon>Events.cs</DependentUpon>
+    </Compile>
     <Compile Include="LaborMarket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Events.resx">
+      <DependentUpon>Events.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LaborMarket.resx">
       <DependentUpon>LaborMarket.cs</DependentUpon>
     </EmbeddedResource>
