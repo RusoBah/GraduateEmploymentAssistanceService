@@ -29,9 +29,9 @@ namespace GraduateEmploymentAssistanceService.Model
         private void btnAuth_Click(object sender, EventArgs e)
         {
             string login = printLogin.Text;
-            string password = printLogin.Text;
+            string password = printPassword.Text;
 
-            string queryString = $"select id, login, password, isUser from students where phone = '{login}' and password = '{password}'";
+            string queryString = $"select id, login, password, isUser from students where login = '{login}' and password = '{password}'";
            
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable dataTable = new DataTable();

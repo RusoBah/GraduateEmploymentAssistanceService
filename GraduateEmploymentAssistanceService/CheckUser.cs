@@ -14,9 +14,11 @@ namespace GraduateEmploymentAssistanceService
         public bool IsUser { get; }
         public string Status => IsUser ? "Personal" : "Student";
 
-        public CheckUser(string login, bool isUser) { 
+        public CheckUser(string login, bool isUser)
+        {
             Login = login;
             IsUser = isUser;
+            
         }
     }
 }

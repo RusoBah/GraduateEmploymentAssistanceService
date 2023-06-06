@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnEvent = new System.Windows.Forms.Button();
             this.btnLaborMarket = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnMainForm = new System.Windows.Forms.Button();
@@ -41,9 +41,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnEvent = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -55,7 +54,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGreen;
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.Header);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -63,15 +61,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1361, 91);
             this.panel1.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkGreen;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(1072, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 28);
-            this.textBox1.TabIndex = 2;
             // 
             // btnClose
             // 
@@ -130,6 +119,23 @@
             this.splitContainer1.Size = new System.Drawing.Size(1361, 710);
             this.splitContainer1.SplitterDistance = 295;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // btnEvent
+            // 
+            this.btnEvent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEvent.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnEvent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEvent.FlatAppearance.BorderSize = 0;
+            this.btnEvent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEvent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvent.Location = new System.Drawing.Point(33, 229);
+            this.btnEvent.Name = "btnEvent";
+            this.btnEvent.Size = new System.Drawing.Size(226, 59);
+            this.btnEvent.TabIndex = 3;
+            this.btnEvent.Text = "Мероприятия";
+            this.btnEvent.UseVisualStyleBackColor = false;
+            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click_1);
             // 
             // btnLaborMarket
             // 
@@ -227,6 +233,17 @@
             this.label3.Text = "Директор ГАПОУ ПО КТПТП\r\n Гришаков Вячеслав Геннадьевич";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::GraduateEmploymentAssistanceService.Properties.Resources.direktor;
+            this.pictureBox1.Location = new System.Drawing.Point(693, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(314, 352);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -240,34 +257,6 @@
     "чреждение Пензенской области\r\n «Каменский техникум промышленных технологий и пре" +
     "дпринимательства»";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnEvent
-            // 
-            this.btnEvent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEvent.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEvent.FlatAppearance.BorderSize = 0;
-            this.btnEvent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEvent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvent.Location = new System.Drawing.Point(33, 229);
-            this.btnEvent.Name = "btnEvent";
-            this.btnEvent.Size = new System.Drawing.Size(226, 59);
-            this.btnEvent.TabIndex = 3;
-            this.btnEvent.Text = "Мероприятия";
-            this.btnEvent.UseVisualStyleBackColor = false;
-            this.btnEvent.Click += new System.EventHandler(this.btnEvent_Click_1);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::GraduateEmploymentAssistanceService.Properties.Resources.direktor;
-            this.pictureBox1.Location = new System.Drawing.Point(693, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(314, 352);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -309,7 +298,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnLaborMarket;
         private System.Windows.Forms.Button btnEvent;
     }

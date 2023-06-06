@@ -19,11 +19,12 @@ namespace GraduateEmploymentAssistanceService
         {
             _user = user;
             InitializeComponent();
+            
         }
-
+        
         private void MainForm_Load(object sender, EventArgs e)
         {
-            textBox1.Text = _user.Status.ToString();
+            
         }
 
         public void ActivateButton(object btnSender)
@@ -34,6 +35,9 @@ namespace GraduateEmploymentAssistanceService
             }
         }
 
+       
+
+        // Для вызова дочерней формы
         public void OpenChildForm(Form childForm, object btnSender)
         {
             // Проверка на активность формы
@@ -87,7 +91,7 @@ namespace GraduateEmploymentAssistanceService
 
         private void btnLaborMarket_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new LaborMarket(), sender);
+            OpenChildForm(new LaborMarket(_user.IsUser), sender);
             Header.Text = btnLaborMarket.Text;
         }
 
@@ -98,7 +102,7 @@ namespace GraduateEmploymentAssistanceService
 
         private void btnEvent_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new Events(), sender);
+            OpenChildForm(new Events(_user.IsUser), sender);
             Header.Text = btnEvent.Text;
         }
     }
